@@ -232,11 +232,12 @@ class Server(object):
 
     def players(self):
         '''players
-        Returns the list of currently commected players
+        Returns the list of currently connected players
         '''
         strings = {
             'vanilla': [r'players online:', r'INFO\](.*)$'],
             'bukkit': [r'players online:', r'(.*)$'],
+            'spigot': [r'players online:', r'INFO\](.*)$'],
         }
         line = self.command('list', *strings[self.server_type])[0]
         line = line.strip('\n').strip('\x1b[m')
