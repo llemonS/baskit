@@ -56,7 +56,7 @@ def handle(msg):
         bot.sendMessage(adminid, stdout.read())
         r.stdout.flush()
     elif text == "/stop":
-        bot.sendMessage(adminid, "desligando o Servidor!")
+        bot.sendMessage(adminid, "Stopping server!")
         r = subprocess.Popen(["sudo","/usr/local/bin/baskit","stop"], stdout=subprocess.PIPE)
         bot.sendMessage(adminid, stdout.read())
         r.stdout.flush()
