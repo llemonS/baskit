@@ -23,7 +23,7 @@ ip = os.popen("curl ipinfo.io/ip").read()[:-1]+(":25565")
 
 # sending server address to my telegram 
 bot.sendMessage(adminid, "Bot Started!\n"+ ip)
-# TODO a list of registered players to send this server address
+# to do a list of registered players to send this server address
 def handle(msg):
     text = msg['text'].strip().replace(username, '')
     chat = msg['chat']['id']
@@ -63,7 +63,7 @@ def handle(msg):
     elif text == "/help":
         r = " /start - start baskit server \n /players - show online players \n /stop - stop server \n /restart - reboot pc."
         bot.sendMessage(adminid, r)
-    #TODO a command to talk with players on server using "baskit cmd say" and getting players live response throught telegram.
+    #to do a command to talk with players on server using "baskit cmd say" and getting players live response throught telegram.
     #looks similar to "baskit players" but first i need to learn regex and how to search the right stuff in latest.log file
 bot.message_loop(handle)
 
